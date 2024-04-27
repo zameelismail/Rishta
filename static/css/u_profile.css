@@ -1,0 +1,202 @@
+:root {
+    --primary-color: rgb(11, 78, 179);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: #ccd1e0;
+    padding-top: 7rem;
+   
+  }
+  /* Global Stylings */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #000000;
+  }
+  
+  input, textarea, #remov {
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    padding-left: 8px;
+    border: 1px solid rgba(41, 40, 42, 0.846);
+    resize: none;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #000000;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+  }
+  
+  /* Form */
+  .form {
+    width: 80%;
+    margin: 0 auto;    
+    box-shadow: 4px 4px 10px #686666;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+}
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group, .input-group-2 {
+    display: grid;
+    color: #fff;
+    align-items: center;
+  }
+
+  .in, .in-2{
+    display: grid;
+    grid-template-columns: repeat(3, 6fr);
+    gap: 1.5rem;
+  }
+
+  .in-2{
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* .btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 1.6rem;
+  }
+  .btn:hover {
+    box-shadow: 0 0 0 1px var(--primary-color);
+    color: #fff;
+  } */
+
+  p{
+    color: #000000;
+  }
+  .pics{
+    width: 70%;
+  }
+  .smk{
+    width: 33.5%;
+  }
+  .p_pic{
+    align-items: center;
+    border: #2e2d2d 1px solid;
+    border-radius: 4px;
+  }
+  #remov br{
+    display: none;
+  }
+  #remov input{
+    font-size: 13px;
+    border: none;
+  }
+  #remov{
+    font-size: 14px;
+    height: 2.2rem;
+  }
+  #remov a{
+    margin-right: 7rem;
+  }

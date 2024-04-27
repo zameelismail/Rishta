@@ -1,0 +1,111 @@
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+html::-webkit-scrollbar {
+    width: .6rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #7dc0f7;
+    border-radius: 5rem;
+}
+
+body {
+    background: #dee2ef;
+}
+
+
+/* #header {
+    height: 102vh;
+    text-align: center;
+} */
+.cp {
+    margin-top: 10px;
+    font-size: 22px;
+    box-shadow: 2px 2px 2px #686666 !important;
+}
+.he{
+    margin-top: -5rem;
+}
+.he h1{
+    margin-top: -12rem;
+}
+
+#contact {
+    height: 100% !important;
+    padding-top: 3rem;
+}
+
+.Contact_us {
+    width: 50%;
+    border-radius: 9px;
+    box-shadow: 4px 4px 10px #686666;
+}
+
+#about {
+    background: #9183eb29;
+    padding-bottom: 4rem;
+}
+
+#about .container {
+    background: #00000020;
+    border-radius: 9px;
+    box-shadow: 4px 4px 10px #686666;
+    margin-top: 2rem;
+}
+
+.Contact_us input,
+.Contact_us textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    font-size: 13px;
+    padding-left: 8px;
+    resize: none;
+    border-radius: 9px;
+}
+
+.Contact_us textarea {
+    height: 9.5rem;
+}
+
+.map {
+    width: 45%;
+}
+
+.navbar a {
+    color: #dee2ef !important;
+}
+
+.navbar a:hover {
+    color: #fff !important;
+}
+
+.btn {
+    box-shadow: 2px 2px 5px #a6afe4;
+}
+
+iframe {
+    box-shadow: 4px 4px 10px #686666;
+    border-radius: 9px;
+    height: 100%;
+}
+
+.icons{
+    border: 2px solid #201f1f;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 1rex;
+}
+.icon_dad{
+    display: inline-flex;
+    align-items: baseline;
+    gap: .5rem;
+}

@@ -1,0 +1,28 @@
+body{
+    background: #dee2ef;
+}
+
+.form{
+    margin-top: 7rem !important;
+    margin: auto;
+    background: #00000062;
+    padding: 2rem;
+    border-radius: 9px;
+    width: 40%;
+}
+
+input{
+    border: none;
+    padding: 4px;
+    font-size: large;
+    border-radius: 6px;
+}
+a{
+    text-decoration: none;
+    color:#1c1c1ce6 ;
+}
+a:hover{
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+}
