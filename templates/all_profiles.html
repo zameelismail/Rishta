@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}All Profile{% endblock title %}
+{% block style_link %}
+<link rel="stylesheet" href="{% static 'css/u_profile.css' %}">{% endblock style_link %}
+
+{% block body %}
+<section id="all_contact" class="w-100">
+    <div class="container pros">
+
+        {% for form in forms %}
+        <div class="form">
+                <div class="text-center mb-2"><img src="{{form.image.url}}" class="pro_pic"></div>
+                {% if form.user.first_name == "" %}
+                <h5 class="text-center ">{{form.user}}</h5>
+                {% else %}
+                <h5 class="text-center ">{{form.user.first_name}}</h5>
+                {% endif %}
+                <hr>
+                <div class="form-step form-step-active">
+                    <div class=" in-2 w-100">
+
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Phone Number</p>
+                            <p class="bigg"> : {{form.Phone_Number}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Email ID</p>
+                            <p class="bigg"> : {{form.user.email}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Age</p>
+                            <p class="bigg"> : {{form.Age}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Height</p>
+                            <p class="bigg"> : {{form.Height}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Education</p>
+                            <p class="bigg"> : {{form.Education}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Occupation</p>
+                            <p class="bigg"> : {{form.My_Complexion}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Complexion</p>
+                            <p class="bigg"> : {{form.My_Complexion}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Martial Status</p>
+                            <p class="bigg"> : {{form.Marital_Status}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Location</p>
+                            <p class="bigg"> : {{form.City}}, {{form.Nationality}}</p>
+                        </div>
+                        <div class="input-group d-flex w-100">
+                            <p class="smal">Income</p>
+                            <p class="bigg"> : Rs. {{form.Annual_Income}}</p>
+                        </div>
+                    </div>
+                    <!-- <div class="input-group d-flex w-100">
+                        <p>follows : </p>
+                        <p>
+                            {% for i in form.follow.all %}
+                            <a href="/view_profile/{{i.id}}"> {{i}}</a>,
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div class="input-group d-flex w-100">
+                        <p>followed by : </p>
+                        <p>
+                            {% for i in form.interested_by.all %}
+                            <a href="/view_profile/{{i.id}}"> {{i}}</a>,
+                            {% endfor %}
+                        </p>
+                    </div> -->
+                    <hr>
+                    <div class="d-flex">
+                        <div class="me-auto d-flex gap-2">
+                            <a href="tell:{{form.Phone_Number}}"><img class="logos"
+                                    src="{% static '/images/telephone-call.png' %}"></a>
+                            <a href="mailto:{{form.user.email}}"><img class="logos"
+                                    src="{% static '/images/email.png' %}"></a>
+                            <a href="mailto:{{form.user.email}}"><img class="logos"
+                                    src="{% static '/images/instagram.png' %}"></a>
+                            <a href="mailto:{{form.user.email}}"><img class="logos"
+                                    src="{% static '/images/facebook.png' %}"></a>
+                        </div>
+                        <a href="/view_profile/{{form.id}}"><button class="btn btn-sm btn-primary">View Profile</button></a>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<style>
+    p {
+        color: #000;
+        font-size: 11px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .form {
+        width: 100% !important;
+        background: #cac3f9de;
+    }
+
+    .smal {
+        width: 40%;
+    }
+
+    .bigg {
+        width: 60%;
+    }
+
+    .btn {
+        padding: 5px !important;
+        margin-top: 0rem !important;
+    }
+
+    .input-group {
+        margin-bottom: 0px !important;
+    }
+
+    .in-2 {
+        gap: 1px !important;
+    }
+
+    .pro_pic {
+        height: 6.3rem;
+        width: 6.3rem;
+        border-radius: 50%;
+        box-shadow: 1px 1px 4px #474545;
+    }
+
+    #all_contact {
+        height: 100%;
+        padding-bottom: 3rem;
+    }
+
+    .pros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .logos {
+        min-height: 100% !important;
+        width: 2rem;
+        mix-blend-mode: darken;
+        border: 2px #3e25ff solid;
+        padding: 4px;
+        border-radius: 50%;
+    }
+
+    hr {
+        border: 1px #000 solid;
+    }
+</style>
+
+{% endblock body %}

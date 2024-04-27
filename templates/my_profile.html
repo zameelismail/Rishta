@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My Profile{% endblock title %}
+{% block style_link %}
+<link rel="stylesheet" href="{% static 'css/u_profile.css' %}">{% endblock style_link %}
+
+
+{% block body %}
+<div class="coll p-5 pt-0">
+    <form class="form mb-5">
+
+        <!-- Steps -->
+        <div class="form-step form-step-active">
+            <div class="text-center"> <img class="pro_pic" src="{{form.image.url}}" height="48px" width="48px"></div>
+            <h1 class="text-center mb-5">My Profile</h1>
+            <hr>
+            <h4>Basic Details</h4>
+            <hr>
+            <div class="gaap">
+                <div class="input-group d-flex w-100 ">
+                    <p class="w-50">Name</p>
+                    <p class="w-50"> : {{form.user.first_name}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Phone Number</p>
+                    <p class="w-50"> : {{form.Phone_Number}}</p>
+                </div>
+                <div class="input-group d-flex w-100 ">
+                    <p class="w-50">Email ID</p>
+                    <p class="w-50"> : {{form.user.email}}</p>
+                </div>
+                <div class="input-group d-flex w-100 ">
+                    <p class="w-50">Age</p>
+                    <p> : {{form.Age}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Height</p>
+                    <p> : {{form.Height}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Weight</p>
+                    <p> : {{form.Weight}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Blood Group</p>
+                    <p> : {{form.Blood_Group}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Marital Status</p>
+                    <p> : {{form.Marital_Status}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Country</p>
+                    <p> : {{form.Nationality}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Complexion</p>
+                    <p> : {{form.My_Complexion}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Workout</p>
+                    <p> : {{form.Workout}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Smoke</p>
+                    <p> : {{form.Smoke}}</p>
+                </div>
+            </div>
+            <hr>
+            <h4>Religious & Astro Background Details</h4>
+            <hr>
+            <div class="gaap">
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Time of Birth</p>
+                    <p> : {{form.Time_of_Birth}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Date of Birth</p>
+                    <p> : {{form.Date_of_Birth}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">City</p>
+                    <p> : {{form.City}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">State</p>
+                    <p> : {{form.State}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Religion</p>
+                    <p> : {{form.Religion}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Cast</p>
+                    <p> : {{form.Cast}}</p>
+                </div>
+            </div>
+            <hr>
+            <h4>Career Details</h4>
+            <hr>
+            <div class="gaap2 row w-100">
+                <div class="input-group d-flex w-100">
+                    <p class="w-25 mb-1">About me :</p>
+                    <p>{{form.About}}</p>
+                </div>
+            </div>
+            <div class="gaap">
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Education</p>
+                    <p> : {{form.Education}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Occupation</p>
+                    <p> : {{form.Occupation}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Side Income</p>
+                    <p> : {{form.Side_Income}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Annual Income</p>
+                    <p> : {{form.Annual_Income}}</p>
+                </div>
+            </div>
+            <hr>
+            <h4>Family Details</h4>
+            <hr>
+            <div class="gaap">
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Father Name</p>
+                    <p> : {{form.Father_Name}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Father's Occupation</p>
+                    <p> : {{form.Father_Occupation}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Mother Name</p>
+                    <p> : {{form.Mother_Name}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Mother's Occupation</p>
+                    <p> : {{form.Mother_Occupation}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">No. of Brothers</p>
+                    <p> : {{form.No_of_Brothers}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">No. of Sisters</p>
+                    <p> : {{form.No_of_Sisters}}</p>
+                </div>
+            </div>
+            <hr>
+            <h4>Partner Preference</h4>
+            <hr>
+            <div class="gaap">
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Complexion</p>
+                    <p> : {{form.Complexion}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Partner's Height</p>
+                    <p> : {{form.Partner_Height}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Partner's Educationt</p>
+                    <p> : {{form.Partner_Educationt}}</p>
+                </div>
+                <div class="input-group d-flex w-100">
+                    <p class="w-50">Partner's Religion</p>
+                    <p> : {{form.Partner_Religion}}</p>
+                </div>
+            </div>
+            <div class="container input-group w-100 mt-2">
+                <p>Partner's Preference :</p>
+                <p>{{form.Partner_Preference}}</p>
+            </div>
+        </div>
+    </form>
+    <div class="card form">
+        <a href="/"><div class="card-header text-center mb-2 bg-danger text-white">Go Back</div></a>
+        <a href="/update_profile"><div class="card-header text-center bg-success text-white">Update Profile</div></a>
+        <div class="card-body">
+            <hr>
+            <h5 class="card-title mb-3">Interested by:</h5>
+            {% for i in form.interested_by.all %}
+            {% if i.user.first_name == "" %}
+            <div class="d-flex gap-2 prr">
+            <div class="text-center mb-2"><img src="{{i.image.url}}" class="pre_pic"></div>
+            <a href="/view_profile/{{i.id}}"><p class="card-text mb-1">{{i.user.username}}</p></a>
+            </div>
+            
+            {% else %}
+            <div class="d-flex gap-2 prr">
+            <div class="text-center mb-2"><img src="{{i.image.url}}" class="pre_pic"></div>
+            <a href="/view_profile/{{i.id}}"><p class="card-text mb-1">{{i.user.first_name}}</p></a>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+<hr>
+            <h5 class="card-title mb-3">Interested in:</h5>
+            {% for i in form.follow.all %}
+            {% if i.user.first_name == "" %}
+            <div class="d-flex gap-2 prr">
+            <div class="text-center mb-2"><img src="{{i.image.url}}" class="pre_pic"></div>
+            <a href="/view_profile/{{i.id}}"><p class="card-text mb-1">{{i.user.username}}</p></a>
+            </div>
+            
+            {% else %}
+            <div class="d-flex gap-2 prr">
+            <div class="text-center mb-2"><img src="{{i.image.url}}" class="pre_pic"></div>
+            <a href="/view_profile/{{i.id}}"><p class="card-text mb-1">{{i.user.first_name}}</p></a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<style>
+    p {
+        color: #000;
+    }
+
+    .gaap,
+    .gaap2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 1rem !important;
+        padding-bottom: 1px !important;
+    }
+
+    .gaap2 {
+        display: flex !important;
+    }
+
+    .form-step {
+        display: block;
+    }
+
+    .form {
+        background: #2926e316;
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    hr {
+        border: #000 solid 2px;
+    }
+
+    .pro_pic, .pre_pic {
+        height: 7.5rem;
+        width: 7rem;
+        border-radius: 50%;
+        box-shadow: 2px 2px 6px #474545;
+    }
+    .pre_pic{
+        height: 1.8rem;
+        width: 1.8rem;
+        box-shadow: none;
+    }
+    a{
+        text-decoration: none;
+    }
+    .coll {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 1rem;
+    }
+    .prr{
+        align-items: baseline;
+    }
+    h4 {
+        margin-left: 1rem;
+    }
+</style>
+
+{% endblock body %}

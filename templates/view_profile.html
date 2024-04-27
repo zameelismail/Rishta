@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create Profile{% endblock title %}
+{% block style_link %}
+<link rel="stylesheet" href="{% static 'css/u_profile.css' %}">{% endblock style_link %}
+
+
+{% block body %}
+<div class="form mb-5">
+
+    <!-- Steps -->
+    <div class="form-step form-step-active">
+        <div class="text-center"> <img class="pro_pic" src="{{form.image.url}}" height="48px" width="48px"></div>
+        {% if form.user.first_name == "" %}
+        <h1 class="text-center mb-5">{{form.user}}'s Profile</h1>
+        {% else %}
+        <h1 class="text-center mb-5">{{form.user.first_name}}'s Profile</h1>
+        {% endif %}
+        <div class="container d-flex">
+            <div class="me-auto d-flex gap-2">
+                <a href="tell:{{form.Phone_Number}}"><img class="logos" src="{% static '/images/telephone-call.png' %}"></a>
+                <a href="mailto:{{form.user.email}}"><img class="logos" src="{% static '/images/email.png' %}"></a>
+                <a href="mailto:{{form.user.email}}"><img class="logos" src="{% static '/images/instagram.png' %}"></a>
+                <a href="mailto:{{form.user.email}}"><img class="logos" src="{% static '/images/facebook.png' %}"></a>
+            </div>
+            <form method="post" class="d-flex gap-2">
+                {% csrf_token %}
+                <a class="btn btn-danger" href="/all_profiles">Go Back</a>
+                {% if form in user.profile.follow.all %}
+                <button type="submit" class="btn btn-danger" name="follow" value="unfollow">Cancel Match</button>
+                {% else %}
+                <button type="submit" class="btn btn-success" name="follow" value="follow">Send Match</button>
+                {% endif %}
+
+            </form>
+        </div>
+        <hr>
+        <h4>Basic Details</h4>
+        <hr>
+        <div class="gaap">
+            <div class="input-group d-flex w-100 ">
+                <p class="w-50">Name</p>
+                <p class="w-50"> : {{form.user.first_name}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Phone Number</p>
+                <p class="w-50"> : {{form.Phone_Number}}</p>
+            </div>
+            <div class="input-group d-flex w-100 ">
+                <p class="w-50">Email ID</p>
+                <p class="w-50"> : {{form.user.email}}</p>
+            </div>
+            <div class="input-group d-flex w-100 ">
+                <p class="w-50">Age</p>
+                <p> : {{form.Age}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Height</p>
+                <p> : {{form.Height}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Weight</p>
+                <p> : {{form.Weight}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Blood Group</p>
+                <p> : {{form.Blood_Group}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Marital Status</p>
+                <p> : {{form.Marital_Status}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Country</p>
+                <p> : {{form.Nationality}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Complexion</p>
+                <p> : {{form.My_Complexion}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Workout</p>
+                <p> : {{form.Workout}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Smoke</p>
+                <p> : {{form.Smoke}}</p>
+            </div>
+        </div>
+        <hr>
+        <h4>Religious & Astro Background Details</h4>
+        <hr>
+        <div class="gaap">
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Time of Birth</p>
+                <p> : {{form.Time_of_Birth}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Date of Birth</p>
+                <p> : {{form.Date_of_Birth}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">City</p>
+                <p> : {{form.City}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">State</p>
+                <p> : {{form.State}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Religion</p>
+                <p> : {{form.Religion}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Cast</p>
+                <p> : {{form.Cast}}</p>
+            </div>
+        </div>
+        <hr>
+        <h4>Education and Career Details</h4>
+        <hr>
+        <div class="gaap2 row w-100">
+            <div class="input-group d-flex w-100">
+                <p class="w-25">About me :</p>
+                <p>{{form.About}}</p>
+            </div>
+        </div>
+        <div class="gaap">
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Education</p>
+                <p> : {{form.Education}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Occupation </p>
+                <p> : {{form.Occupation}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Side Income</p>
+                <p> : {{form.Side_Income}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Annual Income</p>
+                <p> : {{form.Annual_Income}}</p>
+            </div>
+        </div>
+        <hr>
+        <h4>Family Details</h4>
+        <hr>
+        <div class="gaap">
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Father Name</p>
+                <p> : {{form.Father_Name}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Father's Occupation</p>
+                <p> : {{form.Father_Occupation}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Mother Name</p>
+                <p> : {{form.Mother_Name}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Mother's Occupation</p>
+                <p> : {{form.Mother_Occupation}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">No. of Brothers</p>
+                <p> : {{form.No_of_Brothers}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">No. of Sisters</p>
+                <p> : {{form.No_of_Sisters}}</p>
+            </div>
+        </div>
+        <hr>
+        <h4>Partner Preference</h4>
+        <hr>
+        <div class="gaap">
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Complexion</p>
+                <p> : {{form.Complexion}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Partner's Height</p>
+                <p> : {{form.Partner_Height}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Partner's Educationt</p>
+                <p> : {{form.Partner_Educationt}}</p>
+            </div>
+            <div class="input-group d-flex w-100">
+                <p class="w-50">Partner's Religion</p>
+                <p> : {{form.Partner_Religion}}</p>
+            </div>
+        </div>
+        <div class="container input-group w-100 mt-2">
+            <p>Partner's Preference :</p>
+            <p>{{form.Partner_Preference}}</p>
+        </div>
+        <hr>
+    </div>
+</div>
+
+</div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    const button = document.getElementById('download-button');
+
+    function generatePDF() {
+        // Choose the element that your content will be rendered to.
+        const element = document.getElementById('invoice');
+        // Choose the element and save the PDF for your user.
+        html2pdf().from(element).save();
+    }
+
+    button.addEventListener('click', generatePDF);
+</script> -->
+<style>
+    p {
+        color: #000;
+    }
+
+    .gaap,
+    .gaap2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        padding: 1rem !important;
+        padding-bottom: 1px !important;
+    }
+
+    .gaap2 {
+        display: flex !important;
+    }
+
+    hr {
+        border: #000 solid 2px;
+    }
+
+    .form-step {
+        display: block;
+    }
+
+    .form {
+        background: #2926e316;
+    }
+
+    h4 {
+        margin-left: 1rem;
+    }
+
+    .pro_pic {
+        height: 7.5rem;
+        width: 7rem;
+        border-radius: 50%;
+        box-shadow: 2px 2px 6px #474545;
+    }
+
+    .logos {
+        height: 2.2rem;
+        width: 2.2rem;
+        mix-blend-mode: darken;
+        border: 2px #252525 solid;
+        padding: 4px;
+        border-radius: 50%;
+    }
+</style>
+
+{% endblock body %}

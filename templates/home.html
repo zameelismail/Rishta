@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock title %}
+{% block style_link %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">{% endblock style_link %}
+
+
+{% block body %}
+
+<section id="header" class="text-center">
+    <div class="container-fluid text-center mb-4 he">
+        <img class="im" src="{% static 'images/logo3.png' %}" alt="">
+        <h1 class="pt-5 mb-0">Millions of verified Members</h1>
+        <div class="icon_dad mt-4">
+            <div class="icons"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/7542/7542151.png"
+                    data-src="https://cdn-icons-png.flaticon.com/128/7542/7542151.png" alt="Friends " title="Friends "
+                    class="lzy lazyload--done" srcset="https://cdn-icons-png.flaticon.com/128/7542/7542151.png 4x">
+                </div>
+                <p class="me-5">Best Matches </p>
+            <div class="icons"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/10698/10698215.png"
+                    data-src="https://cdn-icons-png.flaticon.com/128/10698/10698215.png" alt="Shield " title="Shield "
+                    class="lzy lazyload--done" srcset="https://cdn-icons-png.flaticon.com/128/10698/10698215.png 4x">
+                </div>
+                <p class="me-5">Verified Profiles </p>
+            <div class="icons"><img class="icon" src="https://cdn-icons-png.flaticon.com/128/3064/3064197.png"
+                    data-src="https://cdn-icons-png.flaticon.com/128/3064/3064197.png" alt="Padlock " title="Padlock "
+                    class="lzy lazyload--done" srcset="https://cdn-icons-png.flaticon.com/128/3064/3064197.png 4x">
+                </div>
+                <p>100% Privacy</p>
+        </div>
+    </div>
+    <a class="btn btn-dark cp mt-0 mb-5" href="/update_profile">Update your Profile</a>
+</section>
+
+<section id="about" class="pt-5 text-center">
+    <h1 class="mb-4">About Us</h1>
+    <div class="container p-4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex mollitia earum quam necessitatibus, porro
+            adipisci iste hic omnis, ad voluptatibus velit, nam quasi blanditiis dolore nostrum quos asperiores autem
+            odit officia ullam nesciunt qui? Rerum exercitationem deserunt quae ab eum neque debitis corporis magni cum
+            ipsa dolores delectus esse veniam ipsam vitae, dicta sit quasi quo recusandae quidem ad, sapiente aliquid.
+            Harum numquam illo quia maxime! Deserunt optio, obcaecati voluptatum sint velit at saepe maxime provident
+            mollitia eum commodi deleniti. Eius ratione, provident illo, repudiandae quasi quidem perspiciatis id
+            adipisci similique quam at fugiat placeat animi ut quod quaerat maiores aut repellendus officiis maxime
+            facere necessitatibus sit quibusdam quos? Id facere ab beatae officia natus inventore impedit odio explicabo
+            a quia sunt earum dolorem dolor aperiam cumque autem, obcaecati veniam fugit. Minima cupiditate, inventore
+            saepe quibusdam animi et consectetur perspiciatis, porro illum magni dignissimos expedita temporibus nulla
+            assumenda corrupti est vitae cumque iusto. Suscipit natus amet cumque commodi. Adipisci magnam quaerat rem
+            asperiores. Assumenda nulla reiciendis ipsum magni dolore perferendis debitis in. Aliquam alias ipsum
+            dolorem repellat tempora eos officiis sunt neque rerum odio iste numquam totam omnis dolore, deleniti non,
+            eius fugiat cum eligendi corrupti. Hic esse ratione illo in error explicabo vero blanditiis dignissimos eum,
+            velit omnis natus quibusdam similique dolorum maxime fugiat eius? Inventore cum minima dolore ad provident
+            soluta repellendus, sit laborum nam ullam dolorum reprehenderit, repudiandae voluptate. Impedit nulla ad vel
+            sequi deleniti labore fugiat provident, blanditiis odit qui minus eligendi ipsum velit. Repudiandae,
+            perspiciatis.</p>
+        <button class="btn btn-primary">Know more</button>
+    </div>
+</section>
+
+<section id="contact">
+    <h1 class="mb-5 text-center">Contact Us</h1>
+    <div class="container d-flex h-75 gap-3 pb-5">
+        <div class="map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7596642568965!2d77.59379420966171!3d12.92316258733514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15e524b3ff2f%3A0xcc5e38d0f7880e!2sJayanagar%204th%20T%20block!5e0!3m2!1sen!2sin!4v1689766306537!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
+        </div>
+        <div class="container Contact_us text-black text-center p-4">
+            <form method="post">
+                {% csrf_token%}
+                <div class="mb-3">
+                    {{form.name}}
+                </div>
+                <div class="mb-3">
+                    {{form.email}}
+                </div>
+                <div class="mb-3">
+                    {{form.subject}}
+                </div>
+                <div class="mb-3">
+                    {{form.message}}
+                </div>
+                <button type="submit" class="btn btn-primary w-100 ">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    .im {
+        mix-blend-mode: darken;
+    }
+</style>
+<script>
+    document.getElementsByTagName('input')[1].placeholder = "Enter your name"
+    document.getElementsByTagName('input')[2].placeholder = "Enter email"
+    document.getElementsByTagName('input')[3].placeholder = "Enter subject"
+    document.getElementsByTagName('textarea')[0].placeholder = "Type something..."
+</script>
+
+{% endblock body %}
