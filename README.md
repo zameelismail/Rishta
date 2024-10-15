@@ -13,12 +13,6 @@ Rishta is a Django-based matrimony website designed to connect individuals seeki
 
 You can try the live demo of Rishta here: [Live Demo](your-live-demo-link-here)
 
-### Screenshots
-
-![Home Page](path/to/homepage_screenshot.png)
-![Profile Search](path/to/profile_search_screenshot.png)
-![Messaging System](path/to/messaging_screenshot.png)
-
 ## Installation
 
 To run the Rishta web application locally, follow these steps:
